@@ -251,9 +251,10 @@ static NSString * const RSDFDatePickerViewDayCellIdentifier = @"RSDFDatePickerVi
     RSDFDatePickerCollectionView *cv = self.collectionView;
     RSDFDatePickerCollectionViewLayout *cvLayout = (RSDFDatePickerCollectionViewLayout *)self.collectionView.collectionViewLayout;
     
-    NSArray *visibleCells = [cv visibleCells];
-    if (![visibleCells count])
-        return;
+    // Not sure what this check is for, and it seems to screw things up...
+//    NSArray *visibleCells = [cv visibleCells];
+//    if (![visibleCells count])
+//        return;
     
     NSDateComponents *dateYearMonthComponents = [self.calendar components:(NSCalendarUnitYear | NSCalendarUnitMonth) fromDate:date];
     NSDate *month = [self.calendar dateFromComponents:dateYearMonthComponents];
